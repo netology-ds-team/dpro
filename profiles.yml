@@ -1,0 +1,52 @@
+# !! Put in cd ~/.dbt/ folder
+
+# For more information on how to configure this file, please see:
+# https://github.com/fishtown-analytics/dbt/blob/master/sample.profiles.yml
+
+# default:
+#   outputs:
+#     dev:
+#       type: redshift
+#       threads: 1
+#       host: 127.0.0.1
+#       port: 5439
+#       user: alice
+#       pass: pa55word
+#       dbname: warehouse
+#       schema: dbt_alice
+#     prod:
+#       type: redshift
+#       threads: 1
+#       host: 127.0.0.1
+#       port: 5439
+#       user: alice
+#       pass: pa55word
+#       dbname: warehouse
+#       schema: analytics
+#   target: dev
+
+config:
+    # If True, dbt will track anonymized usage statistics. If set to
+    # False, no events will be tracked. See below for more information.
+    
+    # Default: True
+    send_anonymous_usage_stats: False
+    
+    # If True, dbt will colorize the terminal output. If False, the
+    # terminal output will not be colorized.
+    
+    # Default: True
+    use_colors: True
+
+jaffle_shop:
+  outputs:
+    dev:
+      type: postgres
+      threads: 2
+      host: localhost
+      port: 5432
+      user: postgres
+      pass: postgres
+      dbname: postgres
+      schema: dbt    
+  target: dev
